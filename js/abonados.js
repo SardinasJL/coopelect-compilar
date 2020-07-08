@@ -101,13 +101,13 @@ Leer_de_BD_local = function () {
                 }
                 var html_a_insertar = `
                                         <div class="container col-md-6 mt-3 tarjeta-pepe">
-            <div class="card bg-primary">
+            <div class="card bg-success">
                 <div class="card-body">
                     <table class="container col-12" data-id="${id}">
                         <tr>
                             <td><i class="fas fa-id-card"> </i></td>
                             <td><span id="spanCliente">${nuevojson[0]["CLIENTE"]}</span></td>
-                            <td class="text-center" rowspan="2" style="border: #ffc107 1px solid;">Bs.<br>${nuevojson[0]["importe"]}</td>
+                            <td class="text-center" rowspan="2" style="border: #fff 1px solid;">Bs.<br>${nuevojson[0]["importe"]}</td>
                         </tr>
                         <tr>
                             <td><i class="fas fa-user"> </i></td>
@@ -128,7 +128,7 @@ Leer_de_BD_local = function () {
                     </table>
 
                     <div class="container-fluid text-center mt-3">
-                        <button class="btn btn-outline-warning btnEliminar" data-id="${id}"><i class="fas fa-trash-alt fa-2x"></i></button>
+                        <button class="btn btn-outline-light btnEliminar" data-id="${id}"><i class="fas fa-trash-alt fa-2x"></i></button>
                     </div>
                 </div>
             </div>

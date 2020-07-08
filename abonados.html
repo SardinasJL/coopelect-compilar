@@ -16,9 +16,9 @@
 <body>
 
 <!-- As a link -->
-<nav class="navbar sticky-top bg-primary shadow">
+<nav class="navbar sticky-top bg-success shadow">
     <a class="navbar-brand">COOPELECT R.L.</a>
-    <button class="btn btn-outline-warning" id="btnModalAñadir"><i class="fas fa-plus"></i></button>
+    <button class="btn btn-outline-light" id="btnModalAñadir"><i class="fas fa-plus"></i></button>
 </nav>
 <div class="container col-md-8">
     <div class="row" id="divCuentas">
@@ -62,29 +62,29 @@
 <div class="modal fade" id="modalAñadir" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
      aria-hidden="true">
     <div class="modal-dialog">
-        <div class="modal-content bg-secondary">
-            <div class="modal-header">
+        <div class="modal-content">
+            <div class="modal-header bg-success">
                 <h5 class="modal-title" id="exampleModalLabel">Nuevo abonado</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
                 <form id="formCuenta">
                     <div class="form-group">
-                        <label for="txtCliente"><i class="fas fa-id-card fa-2x"></i></label>
+                        <label for="txtCliente"><i class="fas fa-id-card fa-2x text-success"></i></label>
                         <input type="number" class="form-control bg-light" id="txtCliente"
                                placeholder="Cédula de identidad" pattern="[0-9]{3,15}" required>
                         <div class="invalid-feedback">No es un C.I. válido</div>
                     </div>
                     <div class="form-group">
-                        <label for="txtAbonado"><i class="fas fa-user fa-2x"></i></label>
+                        <label for="txtAbonado"><i class="fas fa-user fa-2x text-success"></i></label>
                         <input type="number" class="form-control bg-light" id="txtAbonado" placeholder="Nro. Abonado"
                                pattern="[0-9]{3,15}" required>
                         <div class="invalid-feedback">No es un Nro. de abonado válido</div>
                     </div>
                     <div class="form-group">
-                        <label for="cbxServicio"><i class="fas fa-hand-holding fa-2x"></i></label>
+                        <label for="cbxServicio"><i class="fas fa-hand-holding fa-2x text-success"></i></label>
                         <select id="cbxServicio" class="form-control bg-light">
                             <option value="1">Energía eléctrica</option>
                             <option value="2">T.V. Cable</option>
@@ -93,8 +93,8 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-outline-light" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-outline-light" id="btnGuardarcuenta">Guardar</button>
+                <button type="button" class="btn btn-success" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-success" id="btnGuardarcuenta">Guardar</button>
             </div>
         </div>
     </div>

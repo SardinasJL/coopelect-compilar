@@ -25,7 +25,7 @@ Mostrar_avisos = function (json) {
     //Se realiza un iteración para leer el objeto json
     for (var i = 0; i < json.length; i++) {
         var mensaje =
-            `<div class="card bg-primary col-md-6 mt-3">
+            `<div class="card bg-success col-md-6 mt-3">
           <h5 class="card-header">Aviso</h5>
           <div class="card-body">${json[i]["Nota"]}</div>
           </div>`;
