@@ -1,5 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<widget id="com.coopelect.clientes" version="0.0.3">
+<widget id="com.coopelect.clientes" version="0.0.3" xmlns="http://www.w3.org/ns/widgets"
+        xmlns:gap="http://phonegap.com/ns/1.0" xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>COOPELECT</name>
     <description>
         Esta app sirve para brindar atención al cliente a los abonados de COOPELECT R.L.
@@ -25,7 +27,7 @@
 
     <platform name="android">
         <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application">
-            <application android:usesCleartextTraffic="true" />
+            <application android:usesCleartextTraffic="true"/>
         </edit-config>
     </platform>
 </widget>
