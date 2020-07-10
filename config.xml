@@ -1,10 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <widget id="com.coopelect.clientes" version="0.0.3">
-
-    <access origin="*"/>
-    <allow-navigation href="*"/>
-    <allow-intent href="*"/>
-
     <name>COOPELECT</name>
     <description>
         Esta app sirve para brindar atención al cliente a los abonados de COOPELECT R.L.
@@ -21,7 +16,16 @@
     <plugin name="cordova-plugin-whitelist"/>
     <plugin name="cordova-plugin-inappbrowser"/>
     <plugin name="cordova-plugin-splashscreen"/>
-    
+
+    <access origin="*"/>
+    <allow-navigation href="*"/>
+    <allow-intent href="*"/>
     <icon src="icono.png"/>
     <splash src="splash.png"/>
+
+    <platform name="android">
+        <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application">
+            <application android:usesCleartextTraffic="true" />
+        </edit-config>
+    </platform>
 </widget>
