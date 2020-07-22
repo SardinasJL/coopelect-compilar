@@ -9,12 +9,18 @@ Cargar_avisos = function () {
         data: {
             Accion: "ver_avisos",
         },
+        beforeSend: function () {
+            $("#divCargando").html("<div class=\"spinner-border text-light\" role=\"status\"><span class=\"sr-only\">Loading...</span></div>");
+        },
         success: function (json) {
             json = eval(json);
             Mostrar_avisos(json);
         },
         error: function () {
             alert("Verifique su conexión a internet e intente nuevamente.")
+        },
+        complete: function () {
+            $("#divCargando").html("");
         }
     })
 };

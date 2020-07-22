@@ -87,6 +87,10 @@ Leer_de_BD_local = function () {
                 Cliente: json["CLIENTE"],
                 Servicio: json["SERVICIO"]
             },
+            beforeSend: function(){
+                $("#divCargando").html("<div class=\"spinner-border text-light\" role=\"status\"><span class=\"sr-only\">Loading...</span></div>");
+
+            },
             success: function (nuevojson) {
 
                 nuevojson = eval(nuevojson);
@@ -140,6 +144,9 @@ Leer_de_BD_local = function () {
             error: function () {
                 alert("Verifique su conexión a internet e intente nuevamente.");
                 i = localStorage.length; //En caso de error, i = localStorage.length, esto para salir del bucle for
+            },
+            complete: function () {
+                $("#divCargando").html("");
             }
         })
     }
