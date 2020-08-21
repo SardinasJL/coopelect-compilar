@@ -11,6 +11,9 @@
     <link rel="stylesheet" type="text/css" href="fontawesome/css/all.min.css">
     <!-- CSS personalizado -->
     <link rel="stylesheet" href="css/cover.css">
+    <!-- CSS para la grilla -->
+    <link rel="stylesheet" href="css/jsgrid.min.css">
+    <link rel="stylesheet" href="css/jsgrid-theme.min.css">
     <title>COOPELECT</title>
 </head>
 <body>
@@ -34,6 +37,10 @@
         <div class="container col-10"><span id="spanServicio"></span></div>
     </div>
     <div class="row">
+        <div class="container col-2"><i class="fas fa-window-maximize text-success"> </i></div>
+        <div class="container col-10"><span id="spanMedidor"></span></div>
+    </div>
+    <div class="row">
         <div class="container col-2"><i class="fas fa-user-circle text-success"> </i></div>
         <div class="container col-10"><span id="spanRazon"></span></div>
     </div>
@@ -54,12 +61,22 @@
         <div class="container col-2"><i class="fas fa-cog text-success"> </i></div>
         <div class="container col-10"><span id="spanEstado"></span></div>
     </div>
+    <hr style="border: #6c757d 1px solid;">
+    <div class="container-fluid mt-1 col-md-9 text-center text-dark">
+        <div id="grillaDetalledeuda"></div><br>
+        <input type="button" class="btn btn-success" id="btnExportar" value="Exportar (PDF)">
+    </div>
 </div>
+
 
 <!-- jQuery primero, luego Popper.js, luego Bootstrap JS -->
 <script src="js/jquery-3.5.1.js"></script>
 <script src="js/popper.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<!--- Script para la grilla --->
+<script src="js/jsgrid.min.js"></script>
+<!--- Script para generar el reporte --->
+<script src="js/jspdf.min.js"></script>
 <!-- JavaScript común para todas las páginas -->
 <script src="js/configuracion.js"></script>
 <!-- JavaScript para la página actual -->
