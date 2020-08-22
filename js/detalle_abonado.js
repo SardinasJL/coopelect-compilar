@@ -243,8 +243,7 @@ function savePDF(fileName, fileData) {
                 writer.onwrite = function (evt) {
                     console.log("escritura exitosa");
                     alert(fileName + " fue guardado en: " + "(memoria interna)/Android/data/com.coopelect.clientes/files");
-                    alert(cordova.file.externalDataDirectory + "/" + fileName);
-                    abrirPDF(cordova.file.externalDataDirectory + "/" + fileName);
+                    abrirPDF(cordova.file.externalDataDirectory + fileName);
                 };
                 console.log("escribiendo archivo");
                 writer.write(fileData);
