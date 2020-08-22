@@ -228,7 +228,34 @@ Exportar_pdf = function (Abonado, Servicio) {
             doc.text(78.975, y+4, "TOTAL", "center");
             doc.text(160, y + 4, Importe, 'right');
 
-            doc.save('Test.pdf');
+            //doc.save('Test.pdf'); //Esta línea permite descargar Test.pdf como si de una descarga normal se tratara
+            //var pdfoutput = doc.output();
+            //console.log(doc.output());
+            savePDF("Deuda.pdf", doc.output())
         }
     });
 };
+
+function savePDF(fileName, fileData) {
+
+    window.resolveLocalFileSystemURL(cordova.file.externalDataDirectory, function (dir) {
+        dir.getFile(fileName, {create: true, exclusive: false}, function (fileEntry) {
+            fileEntry.createWriter(function (writer) {
+                writer.onwrite = function (evt) {
+                    console.log("write success");
+                    alert(fileName+" wurde gespeichert unter " + cordova.file.externalDataDirectory );
+                };
+
+                console.log("writing to file");
+                writer.write(fileData);
+            })
+
+        }, function () {
+
+
+            console.log("ERROR SAVEFILE");
+            alert ("heute gibts keine PDF")
+
+        });
+    });
+}
