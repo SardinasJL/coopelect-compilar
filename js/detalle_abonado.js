@@ -179,7 +179,7 @@ Exportar_pdf = function (Abonado, Servicio) {
             doc.setFont("arial");
             doc.setFontType("bold");
             doc.setFontSize(8);
-            doc.text(20, 20, 'Cooperativa de Servicios Públicos de Electricidad Tupiza R.L.');
+            doc.text(20, 20, 'Cooperativa de Servicios Publicos de Electricidad Tupiza R.L.');
             doc.setFontSize(12);
             doc.text(107.95, 30, 'DETALLE DE DEUDA', 'center');
             doc.setFontSize(10);
@@ -188,7 +188,7 @@ Exportar_pdf = function (Abonado, Servicio) {
             doc.setFontType("normal");
             doc.text(40, 40, Abonado);
             doc.setFontType("bold");
-            doc.text(20, 45, 'Razón: ');
+            doc.text(20, 45, 'Razon: ');
             doc.setFontType("normal");
             doc.text(40, 45, Razon);
             if (Medidor != 0) {
@@ -204,7 +204,7 @@ Exportar_pdf = function (Abonado, Servicio) {
             doc.line(50, 50, 165.9, 50); //Línea horizontal superior
             doc.line(50, 50, 50, 55); //Línea vertical izquierda
             doc.setFontType("bold");
-            doc.text(78.975, 54, 'EMISIÓN', 'center');
+            doc.text(78.975, 54, 'EMISION', 'center');
             doc.line(107.95, 50, 107.95, 55); //Línea vertical centro
             doc.text(136.925, 54, 'IMPORTE (Bs.)', 'center');
             doc.line(165.9, 50, 165.9, 55); //Línea vertical derecha
@@ -237,18 +237,16 @@ Exportar_pdf = function (Abonado, Servicio) {
 };
 
 function savePDF(fileName, fileData) {
-    //window.resolveLocalFileSystemURL(cordova.file.externalDataDirectory, function (dir) {
-    window.resolveLocalFileSystemURL(cordova.file.documentsDirectory, function (dir) {
+    window.resolveLocalFileSystemURL(cordova.file.externalDataDirectory, function (dir) {
         dir.getFile(fileName, {create: true, exclusive: false}, function (fileEntry) {
             fileEntry.createWriter(function (writer) {
                 writer.onwrite = function (evt) {
                     console.log("escritura exitosa");
-                    alert(fileName + " fue guardado en: " + cordova.file.documentsDirectory);
+                    alert(fileName + " fue guardado en: " + "(memoria interna)/Android/data/com.coopelect.clientes/files");
                 };
                 console.log("escribiendo archivo");
                 writer.write(fileData);
             })
-
         }, function () {
             console.log("ERROR AL GUARDAR EL ARCHIVO");
             alert("Error. El archivo no pudo ser guardado.");
