@@ -243,6 +243,7 @@ function savePDF(fileName, fileData) {
                 writer.onwrite = function (evt) {
                     console.log("escritura exitosa");
                     alert(fileName + " fue guardado en: " + "(memoria interna)/Android/data/com.coopelect.clientes/files");
+                    abrirPDF();
                 };
                 console.log("escribiendo archivo");
                 writer.write(fileData);
@@ -253,3 +254,19 @@ function savePDF(fileName, fileData) {
         });
     });
 }
+
+abrirPDF = function(){
+    cordova.plugins.fileOpener2.showOpenWithDialog(
+        '/Android/data/com.coopelect.clientes/files/Deuda.pdf',
+        'application/pdf',
+        {
+            error : function(e) {
+                console.log('Error status: ' + e.status + ' - Error message: ' + e.message);
+            },
+            success : function () {
+                console.log('file opened successfully');
+            },
+            position : [0, 0]
+        }
+    );
+};
