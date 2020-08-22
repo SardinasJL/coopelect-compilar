@@ -237,12 +237,13 @@ Exportar_pdf = function (Abonado, Servicio) {
 };
 
 function savePDF(fileName, fileData) {
-    window.resolveLocalFileSystemURL(cordova.file.externalDataDirectory, function (dir) {
+    //window.resolveLocalFileSystemURL(cordova.file.externalDataDirectory, function (dir) {
+    window.resolveLocalFileSystemURL(cordova.file.documentsDirectory, function (dir) {
         dir.getFile(fileName, {create: true, exclusive: false}, function (fileEntry) {
             fileEntry.createWriter(function (writer) {
                 writer.onwrite = function (evt) {
                     console.log("escritura exitosa");
-                    alert(fileName + " fue guardado en: " + cordova.file.externalDataDirectory);
+                    alert(fileName + " fue guardado en: " + cordova.file.documentsDirectory);
                 };
                 console.log("escribiendo archivo");
                 writer.write(fileData);
