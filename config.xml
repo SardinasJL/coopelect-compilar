@@ -28,6 +28,7 @@
     <splash src="splash.png"/>
 
     <platform name="android">
+        <preference name="android-targetSdkVersion" value="29" />
         <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application">
             <application android:usesCleartextTraffic="true"/>
         </edit-config>
