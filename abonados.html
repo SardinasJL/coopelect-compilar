@@ -19,7 +19,7 @@
 <nav class="navbar sticky-top bg-success shadow">
     <a class="navbar-brand">COOPELECT R.L.</a>
     <div class="container col-3" id="divCargando"></div>
-    <button class="btn btn-outline-light" id="btnModalAñadir"><i class="fas fa-plus"></i></button>
+    <button class="btn btn-outline-light" id="btnModalAñadir"><i class="fal fa-plus"></i></button>
 </nav>
 <div class="container col-md-8 align-items-center">
     <div class="row" id="divCuentas">
@@ -28,30 +28,30 @@
                 <div class="card-body">
                     <table>
                         <tr>
-                            <td><i class="fas fa-id-card"> </i></td>
+                            <td><i class="fal fa-id-card"> </i></td>
                             <td><span id="spanCI">6714010</span></td>
                             <td class="text-center" rowspan="2" style="border: #34ce57 1px solid;">Bs.<br>123.12</td>
                         </tr>
                         <tr>
-                            <td><i class="fas fa-user"> </i></td>
+                            <td><i class="fal fa-user"> </i></td>
                             <td><span id="spanAbonado">123456789</span></td>
                         </tr>
                         <tr>
-                            <td><i class="fas fa-hand-holding"> </i></td>
+                            <td><i class="fal fa-hand-holding"> </i></td>
                             <td><span id="spanServicio">T.V. Cable</span></td>
                         </tr>
                         <tr>
-                            <td><i class="fas fa-user-circle"> </i></td>
+                            <td><i class="fal fa-user-circle"> </i></td>
                             <td colspan="2"><span id="spanRazon">ZAMBRANA ESTUPIÑON JUAN CARLOS HUGO</span></td>
                         </tr>
                         <tr>
-                            <td><i class="fas fa-home"> </i></td>
+                            <td><i class="fal fa-home"> </i></td>
                             <td colspan="2"><span id="spanCalle">CALLE BOLIVAR ESQUINA COBIJA</span></td>
                         </tr>
                     </table>
 
                     <div class="container-fluid text-center mt-3">
-                        <button class="btn btn-outline-success btnEliminar"><i class="fas fa-trash-alt fa-2x"></i></button>
+                        <button class="btn btn-outline-success btnEliminar"><i class="fal fa-trash-alt fa-2x"></i></button>
                     </div>
                 </div>
             </div>
@@ -73,19 +73,19 @@
             <div class="modal-body">
                 <form id="formCuenta">
                     <div class="form-group">
-                        <label for="txtCliente"><i class="fas fa-id-card fa-2x text-success"></i></label>
+                        <label for="txtCliente"><i class="fal fa-id-card fa-2x text-success"></i></label>
                         <input type="number" class="form-control bg-light" id="txtCliente"
                                placeholder="Cédula de identidad" pattern="[0-9]{3,15}" required>
                         <div class="invalid-feedback">No es un C.I. válido</div>
                     </div>
                     <div class="form-group">
-                        <label for="txtAbonado"><i class="fas fa-user fa-2x text-success"></i></label>
+                        <label for="txtAbonado"><i class="fal fa-user fa-2x text-success"></i></label>
                         <input type="number" class="form-control bg-light" id="txtAbonado" placeholder="Nro. Abonado"
                                pattern="[0-9]{3,15}" required>
                         <div class="invalid-feedback">No es un Nro. de abonado válido</div>
                     </div>
                     <div class="form-group">
-                        <label for="cbxServicio"><i class="fas fa-hand-holding fa-2x text-success"></i></label>
+                        <label for="cbxServicio"><i class="fal fa-hand-holding-magic fa-2x text-success"></i></label>
                         <select id="cbxServicio" class="form-control bg-light">
                             <option value="1">Energía eléctrica</option>
                             <option value="2">T.V. Cable</option>

@@ -109,30 +109,30 @@ Leer_de_BD_local = function () {
                 <div class="card-body">
                     <table class="container col-12" data-id="${id}">
                         <tr>
-                            <td><i class="fas fa-id-card"> </i></td>
+                            <td><i class="fal fa-id-card"> </i></td>
                             <td><span id="spanCliente">${nuevojson[0]["CLIENTE"]}</span></td>
                             <td class="text-center" rowspan="2" style="border: #fff 1px solid;">Bs.<br>${nuevojson[0]["importe"]}</td>
                         </tr>
                         <tr>
-                            <td><i class="fas fa-user"> </i></td>
+                            <td><i class="fal fa-user"> </i></td>
                             <td><span id="spanAbonado">${nuevojson[0]["ABONADO"]}</span></td>
                         </tr>
                         <tr>
-                            <td><i class="fas fa-hand-holding"> </i></td>
+                            <td><i class="fal fa-hand-holding-magic"> </i></td>
                             <td><span id="spanServicio">${servicio}</span></td>
                         </tr>
                         <tr>
-                            <td><i class="fas fa-user-circle"> </i></td>
+                            <td><i class="fal fa-user-circle"> </i></td>
                             <td colspan="2"><span id="spanRazon">${nuevojson[0]["RAZON"]}</span></td>
                         </tr>
                         <tr>
-                            <td><i class="fas fa-home"> </i></td>
+                            <td><i class="fal fa-home"> </i></td>
                             <td colspan="2"><span id="spanCalle">${nuevojson[0]["calle"]}</span></td>
                         </tr>
                     </table>
 
                     <div class="container-fluid text-center mt-3">
-                        <button class="btn btn-outline-light btnEliminar" data-id="${id}"><i class="fas fa-trash-alt fa-2x"></i></button>
+                        <button class="btn btn-outline-light btnEliminar" data-id="${id}"><i class="fal fa-trash-alt fa-2x"></i></button>
                     </div>
                 </div>
             </div>
