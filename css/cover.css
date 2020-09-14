@@ -16,6 +16,10 @@ button.btn.teal.darken-4.btn-block.text-left:hover{
   color:#007bff;
 }
 
+div.fixed-action-btn{
+    height: auto;
+}
+
 /* Custom default button */
 /*
 .btn-secondary,
