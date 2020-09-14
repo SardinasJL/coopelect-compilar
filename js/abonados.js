@@ -12,6 +12,9 @@ $(document).ready(function () {
         //Se llama al modal, se resetea el formulario del modal y se quita la clase was-validated
         $("#modalAñadir").modal('show');
         $("#formCuenta")[0].reset();
+        //Para que el reset sea completo se borra la clase active de todos los label y de todos los i
+        $("#formCuenta label").removeClass("active");
+        $("#formCuenta i").removeClass("active");
         setTimeout(function () {
             $("#txtCliente").focus();
         }, 600);
