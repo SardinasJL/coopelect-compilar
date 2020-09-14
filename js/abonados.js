@@ -104,7 +104,6 @@ Leer_de_BD_local = function () {
             },
             beforeSend: function () {
                 $("#divCargando").html("<div class=\"spinner-border text-light\" role=\"status\"><span class=\"sr-only\">Loading...</span></div>");
-
             },
             success: function (nuevojson) {
 

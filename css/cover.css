@@ -10,6 +10,12 @@ a:hover {
     color: #fff;
 }
 */
+
+button.collapsed:focus,
+button.collapsed:hover{
+  color:blue;
+}
+
 /* Custom default button */
 /*
 .btn-secondary,
