@@ -11,9 +11,9 @@ a:hover {
 }
 */
 
-button.collapsed:focus,
-button.collapsed:hover{
-  color:blue;
+button.btn.teal.darken-4.btn-block.text-left:focus,
+button.btn.teal.darken-4.btn-block.text-left:hover{
+  color:#007bff;
 }
 
 /* Custom default button */
