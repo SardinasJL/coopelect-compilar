@@ -12,6 +12,10 @@ $(document).ready(function () {
         //Se llama al modal, se resetea el formulario del modal y se quita la clase was-validated
         $("#modalAñadir").modal('show');
         $("#formCuenta")[0].reset();
+        setTimeout(function () {
+            $("#txtCliente").focus();
+        }, 600);
+
         $("#formCuenta").removeClass("was-validated");
     });
 
@@ -19,6 +23,14 @@ $(document).ready(function () {
     $("#btnGuardarcuenta").click(function () {
         Añadircuenta();
     });
+
+    //Evento para el txtbox abonado (cuando presiona enter, se procede al guardado)
+    $("#txtAbonado").keyup(function (event) {
+       if(event.keyCode == 13){
+           Añadircuenta();
+       };
+    });
+
 });
 
 Añadircuenta = function () {

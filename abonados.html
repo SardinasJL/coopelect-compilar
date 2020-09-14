@@ -24,7 +24,7 @@
 </nav>
 
 <div class="fixed-action-btn" style="bottom: 20px; right: 12px;">
-    <a class="btn-floating green accent-3" id="btnModalAñadir"><i class="fal fa-plus"></i></a>
+    <a class="btn-floating btn-lg green accent-3" id="btnModalAñadir"><i class="fal fa-plus"></i></a>
 </div>
 <div class="container col-md-8 align-items-center">
     <div class="row" id="divCuentas">
@@ -84,13 +84,13 @@
                 <form id="formCuenta">
                     <div class="md-form">
                         <i class="fal fa-id-card prefix"></i>
-                        <input type="number" class="form-control" id="txtCliente" pattern="[0-9]{3,15}" required>
+                        <input type="number" class="form-control" id="txtCliente" max="999999999999999" min="10" step="1" required>
                         <label for="txtCliente">Cédula de identidad o NIT</label>
                         <div class="invalid-feedback">No es un CI/NIT válido</div>
                     </div>
                     <div class="md-form">
                         <i class="fal fa-user prefix"></i>
-                        <input type="number" class="form-control" id="txtAbonado" pattern="[0-9]{3,15}" required>
+                        <input type="number" class="form-control" id="txtAbonado" max="999999999999999" min="10" step="1" required>
                         <label for="txtAbonado">Abonado</label>
                         <div class="invalid-feedback">No es un Nro. de abonado válido</div>
                     </div>
