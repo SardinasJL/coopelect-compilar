@@ -3,21 +3,23 @@
  */
 
 /* Links */
+/*
 a,
 a:focus,
 a:hover {
     color: #fff;
 }
-
+*/
 /* Custom default button */
+/*
 .btn-secondary,
 .btn-secondary:hover,
 .btn-secondary:focus {
     color: #333;
-    text-shadow: none; /* Prevent inheritance from `body` */
+    text-shadow: none;
     background-color: #000;
 }
-
+*/
 /*
  * Base structure
  */
@@ -25,8 +27,8 @@ a:hover {
 html,
 body {
     height: 100%;
-    background-color: #e8e8e8;
-    color: #fff;
+    /*background-color: #e8e8e8;
+    color: #fff;*/
 }
 
 /* Esta regla sirve para eliminar esos horribles íconos x y v cuando se valida un input*/

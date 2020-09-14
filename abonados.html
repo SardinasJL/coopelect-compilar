@@ -4,25 +4,35 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- Fontawesome -->
     <link rel="stylesheet" type="text/css" href="fontawesome/css/all.min.css">
+    <!--- MD Bootstrap -->
+    <link rel="stylesheet" href="css/mdb.min.css">
     <!-- CSS personalizado -->
     <link rel="stylesheet" href="css/cover.css">
     <title>COOPELECT</title>
 </head>
-<body>
+<body class="mdb-skin">
 
 <!-- As a link -->
-<nav class="navbar sticky-top bg-success shadow">
+<nav class="navbar teal darken-4 sticky-top">
     <a class="navbar-brand">COOPELECT R.L.</a>
     <div class="container col-3" id="divCargando"></div>
-    <button class="btn btn-outline-light" id="btnModalAñadir"><i class="fal fa-plus"></i></button>
+    <!---<button class="btn btn-outline-light" id="btnModalAñadir"><i class="fal fa-plus"></i></button>--->
 </nav>
+
+<div class="fixed-action-btn" style="bottom: 20px; right: 12px;">
+    <a class="btn-floating green accent-3" id="btnModalAñadir"><i class="fal fa-plus"></i></a>
+</div>
 <div class="container col-md-8 align-items-center">
     <div class="row" id="divCuentas">
+
+
+
+
+
         <!---<div class="container col-md-6 mt-3">
             <div class="card bg-dark">
                 <div class="card-body">
@@ -64,38 +74,39 @@
      aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header bg-success">
+            <div class="modal-header teal darken-4 text-white">
                 <h5 class="modal-title" id="exampleModalLabel">Nuevo abonado</h5>
-                <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
                 <form id="formCuenta">
-                    <div class="form-group">
-                        <label for="txtCliente"><i class="fal fa-id-card fa-2x text-success"></i></label>
-                        <input type="number" class="form-control bg-light" id="txtCliente"
-                               placeholder="Cédula de identidad" pattern="[0-9]{3,15}" required>
-                        <div class="invalid-feedback">No es un C.I. válido</div>
+                    <div class="md-form">
+                        <i class="fal fa-id-card prefix"></i>
+                        <input type="number" class="form-control" id="txtCliente" pattern="[0-9]{3,15}" required>
+                        <label for="txtCliente">Cédula de identidad o NIT</label>
+                        <div class="invalid-feedback">No es un CI/NIT válido</div>
                     </div>
-                    <div class="form-group">
-                        <label for="txtAbonado"><i class="fal fa-user fa-2x text-success"></i></label>
-                        <input type="number" class="form-control bg-light" id="txtAbonado" placeholder="Nro. Abonado"
-                               pattern="[0-9]{3,15}" required>
+                    <div class="md-form">
+                        <i class="fal fa-user prefix"></i>
+                        <input type="number" class="form-control" id="txtAbonado" pattern="[0-9]{3,15}" required>
+                        <label for="txtAbonado">Abonado</label>
                         <div class="invalid-feedback">No es un Nro. de abonado válido</div>
                     </div>
-                    <div class="form-group">
-                        <label for="cbxServicio"><i class="fal fa-hand-holding-magic fa-2x text-success"></i></label>
-                        <select id="cbxServicio" class="form-control bg-light">
-                            <option value="1">Energía eléctrica</option>
-                            <option value="2">T.V. Cable</option>
-                        </select>
-                    </div>
                 </form>
+                <div class="md-form">
+                    <select id="cbxServicio" class="mdb-select">
+                        <option value="1">Energía eléctrica</option>
+                        <option value="2">T.V. Cable</option>
+                    </select>
+                    <label for="cbxServicio">Servicio <i class="fal fa-hand-holding-magic"></i></label>
+                </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-success" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-success" id="btnGuardarcuenta">Guardar</button>
+                <button type="button" class="btn teal darken-4 text-white" id="btnGuardarcuenta">Guardar</button>
+                <button type="button" class="btn btn-outline-dark-green waves-effect" data-dismiss="modal">Cancelar
+                </button>
             </div>
         </div>
     </div>
@@ -105,6 +116,8 @@
 <script src="js/jquery-3.5.1.js"></script>
 <script src="js/popper.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<!--- MD Bootstrap --->
+<script src="js/mdb.min.js"></script>
 <!-- JavaScript común para todas las páginas -->
 <script src="js/configuracion.js"></script>
 <!-- JavaScript para la página actual -->

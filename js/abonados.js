@@ -2,6 +2,9 @@ $(document).ready(function () {
     //console.log(localStorage);
     //ordenar_localstorage();
     //Se leen todos los registros guardados en la BD local
+
+    $('.mdb-select').materialSelect();
+
     Leer_de_BD_local();
 
     //Evento para el botón añadir (ícono de cruz)
@@ -87,7 +90,7 @@ Leer_de_BD_local = function () {
                 Cliente: json["CLIENTE"],
                 Servicio: json["SERVICIO"]
             },
-            beforeSend: function(){
+            beforeSend: function () {
                 $("#divCargando").html("<div class=\"spinner-border text-light\" role=\"status\"><span class=\"sr-only\">Loading...</span></div>");
 
             },
@@ -104,14 +107,18 @@ Leer_de_BD_local = function () {
                         break;
                 }
                 var html_a_insertar = `
-                                        <div class="container col-md-6 mt-3 tarjeta-pepe">
-            <div class="card bg-success">
-                <div class="card-body">
+                
+        <div class="container col-md-6 mt-3 tarjeta-pepe">
+            <div class="card teal darken-4 text-white ">
+                <div class="card-body waves-effect">
                     <table class="container col-12" data-id="${id}">
                         <tr>
                             <td><i class="fal fa-id-card"> </i></td>
                             <td><span id="spanCliente">${nuevojson[0]["CLIENTE"]}</span></td>
-                            <td class="text-center" rowspan="2" style="border: #fff 1px solid;">Bs.<br>${nuevojson[0]["importe"]}</td>
+                            <td class="text-center" rowspan="2" style="border: #fff 1px solid;">
+                                Bs.<br>
+                                ${nuevojson[0]["importe"]}
+                            </td>
                         </tr>
                         <tr>
                             <td><i class="fal fa-user"> </i></td>
@@ -130,13 +137,17 @@ Leer_de_BD_local = function () {
                             <td colspan="2"><span id="spanCalle">${nuevojson[0]["calle"]}</span></td>
                         </tr>
                     </table>
-
-                    <div class="container-fluid text-center mt-3">
-                        <button class="btn btn-outline-light btnEliminar" data-id="${id}"><i class="fal fa-trash-alt fa-2x"></i></button>
+                </div>
+                <div class="card-footer">
+                    <span class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ver más...</span>
+                    <div class="dropdown-menu dropdown-menu-left">
+                        <button class="dropdown-item btnDetalle" type="button" data-id="${id}">Detalle <i class="fal fa-info-square"></i></button>
+                        <button class="dropdown-item btnEliminar" type="button" data-id="${id}">Eliminar <i class="fal fa-trash-alt"></i></button>
                     </div>
                 </div>
             </div>
         </div>
+                                
                                       `;
                 $("#divCuentas").append(html_a_insertar);
 
@@ -158,6 +169,7 @@ Leer_de_BD_local = function () {
         localStorage.removeItem(id);
     });
     //Se proporciona funcionalidad a todos las tablas
+
     $("table").click(function () {
         var esta_tabla = $(this);
         var id = esta_tabla.attr("data-id");
@@ -167,6 +179,17 @@ Leer_de_BD_local = function () {
             window.open("detalle_abonado.html?Abonado=" + json["ABONADO"] + "&Cliente=" + json["CLIENTE"] + "&Servicio=" + json["SERVICIO"], "_self");
         }
     });
+
+    $("button.btnDetalle").click(function () {
+        var este_boton = $(this);
+        var id = este_boton.attr("data-id");
+        if (id != null) {
+            var json = localStorage.getItem(id);
+            json = JSON.parse(json);
+            window.open("detalle_abonado.html?Abonado=" + json["ABONADO"] + "&Cliente=" + json["CLIENTE"] + "&Servicio=" + json["SERVICIO"], "_self");
+        }
+    });
+
 };
 
 /*

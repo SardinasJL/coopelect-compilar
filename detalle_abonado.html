@@ -4,11 +4,12 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- Fontawesome -->
     <link rel="stylesheet" type="text/css" href="fontawesome/css/all.min.css">
+    <!--- MD Bootstrap -->
+    <link rel="stylesheet" href="css/mdb.min.css">
     <!-- CSS personalizado -->
     <link rel="stylesheet" href="css/cover.css">
     <!-- CSS para la grilla -->
@@ -16,55 +17,55 @@
     <link rel="stylesheet" href="css/jsgrid-theme.min.css">
     <title>COOPELECT</title>
 </head>
-<body>
+<body class="mdb-skin">
 
 <!-- As a link -->
-<nav class="navbar sticky-top bg-success shadow">
+<nav class="navbar sticky-top teal darken-4">
     <a class="navbar-brand">COOPELECT R.L.</a>
     <div class="container col-3" id="divCargando"></div>
 </nav>
-<div class="container col-md-8 mt-3 text-dark">
+<div class="container col-md-8 mt-3">
     <div class="row">
-        <div class="container col-2"><i class="fal fa-id-card text-success"> </i></div>
+        <div class="container col-2"><i class="fal fa-id-card mdb-color-text"> </i></div>
         <div class="container col-10"><span id="spanCliente"></span></div>
     </div>
     <div class="row">
-        <div class="container col-2"><i class="fal fa-user text-success"> </i></div>
+        <div class="container col-2"><i class="fal fa-user mdb-color-text"> </i></div>
         <div class="container col-10"><span id="spanAbonado"></span></div>
     </div>
     <div class="row">
-        <div class="container col-2"><i class="fal fa-hand-holding-magic text-success"> </i></div>
+        <div class="container col-2"><i class="fal fa-hand-holding-magic mdb-color-text"> </i></div>
         <div class="container col-10"><span id="spanServicio"></span></div>
     </div>
     <div class="row">
-        <div class="container col-2"><i class="fal fa-charging-station text-success"> </i></div>
+        <div class="container col-2"><i class="fal fa-charging-station mdb-color-text"> </i></div>
         <div class="container col-10"><span id="spanMedidor"></span></div>
     </div>
     <div class="row">
-        <div class="container col-2"><i class="fal fa-user-circle text-success"> </i></div>
+        <div class="container col-2"><i class="fal fa-user-circle mdb-color-text"> </i></div>
         <div class="container col-10"><span id="spanRazon"></span></div>
     </div>
     <div class="row">
-        <div class="container col-2"><i class="fal fa-home text-success"> </i></div>
+        <div class="container col-2"><i class="fal fa-home mdb-color-text"> </i></div>
         <div class="container col-10"><span id="spanCalle"></span></div>
     </div>
     <hr style="border: #6c757d 1px solid;">
     <div class="row">
-        <div class="container col-2"><i class="fal fa-calendar-alt text-success"> </i></div>
+        <div class="container col-2"><i class="fal fa-calendar-alt mdb-color-text"> </i></div>
         <div class="container col-10"><span id="spanNro"></span></div>
     </div>
     <div class="row">
-        <div class="container col-2"><i class="fal fa-wallet text-success"> </i></div>
+        <div class="container col-2"><i class="fal fa-wallet mdb-color-text"> </i></div>
         <div class="container col-10"><span id="spanImporte"></span> Bs.</div>
     </div>
     <div class="row">
-        <div class="container col-2"><i class="fal fa-cog text-success"> </i></div>
+        <div class="container col-2"><i class="fal fa-cog mdb-color-text"> </i></div>
         <div class="container col-10"><span id="spanEstado"></span></div>
     </div>
     <hr style="border: #6c757d 1px solid;">
-    <div class="container-fluid mt-1 col-md-9 text-center text-dark">
+    <div class="container-fluid mt-1 col-md-9 text-center">
         <div id="grillaDetalledeuda"></div><br>
-        <input type="button" class="btn btn-success" id="btnExportar" value="Exportar (PDF)">
+        <input type="button" class="btn teal darken-4 text-white" id="btnExportar" value="Exportar (PDF)">
     </div>
 </div>
 
@@ -73,6 +74,8 @@
 <script src="js/jquery-3.5.1.js"></script>
 <script src="js/popper.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<!--- MD Bootstrap --->
+<script src="js/mdb.min.js"></script>
 <!--- cordova --->
 <script src="cordova.js"></script>
 <!--- Script para la grilla --->
