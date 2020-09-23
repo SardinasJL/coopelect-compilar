@@ -168,7 +168,7 @@ Leer_de_BD_local = function () {
             }, //fin del success
             error: function () {
                 alert("Verifique su conexión a internet e intente nuevamente.");
-                i = localStorage.length; //En caso de error, i = localStorage.length, esto para salir del bucle for
+                i = localStorage.length; //En caso de error, i = localStorage.length, esto para salir del bucle for y dejar de iterar
             },
             complete: function () {
                 $("#divCargando").html("");
