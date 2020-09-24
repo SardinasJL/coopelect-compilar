@@ -23,6 +23,17 @@
         <img src="icono.png" height="30" class="d-inline-block align-top" alt="mdb logo"> Deudas
     </a>
     <div class="container col-3" id="divCargando"></div>
+    <a type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i
+            class="fal fa-ellipsis-v-alt"></i></a>
+    <!--Menu del dropdown-->
+    <div class="dropdown-menu dropdown-primary dropdown-menu-right">
+        <button class="dropdown-item" type="button" id="btnTotal">Total <i class="fal fa-sigma"></i></button>
+        <!---
+        <a class="dropdown-item" href="#">Another action</a>
+        <a class="dropdown-item" href="#">Something else here</a>
+        <a class="dropdown-item" href="#">Something else here</a>
+        --->
+    </div>
 </nav>
 
 <div class="fixed-action-btn" style="bottom: 20px; right: 12px;">
@@ -112,6 +123,53 @@
         </div>
     </div>
 </div>
+
+<!--- Modal para calcular el total de todos los usuarios --->
+
+<div class="modal fade" id="modalTotal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <!--Header-->
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Total por abonado</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <!--Body-->
+            <div class="modal-body">
+
+                <div class="table-responsive text-nowrap">
+                    <table class="table table-striped" id="tablaTotal">
+                        <thead>
+                        <tr>
+                            <th class="th-lg text-center font-weight-bold">ABONADO</th>
+                            <th class="th-lg text-center font-weight-bold">RAZÓN SOCIAL</th>
+                            <th class="th-lg text-center font-weight-bold">IMPORTE (Bs)</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                        <tfoot>
+                        <tr class="total">
+                            <th scope="row"></th>
+                            <td class="text-center font-weight-bold">TOTAL</td>
+                            <td class="text-right font-weight-bold" id="tdTotal"></td>
+                        </tr>
+                        </tfoot>
+                    </table>
+                </div>
+
+            </div>
+            <!--Footer-->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <!-- jQuery primero, luego Popper.js, luego Bootstrap JS -->
 <script src="js/jquery-3.5.1.js"></script>

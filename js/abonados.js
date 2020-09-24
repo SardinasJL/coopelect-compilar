@@ -29,9 +29,15 @@ $(document).ready(function () {
 
     //Evento para el txtbox abonado (cuando presiona enter, se procede al guardado)
     $("#txtAbonado").keyup(function (event) {
-       if(event.keyCode == 13){
-           Añadircuenta();
-       };
+        if (event.keyCode == 13) {
+            Añadircuenta();
+        }
+    });
+
+    //Evento para mostrar el modal "total"
+    $("#btnTotal").click(function () {
+        $("#modalTotal").modal("show");
+        total_por_usuarios();
     });
 
 });
@@ -128,27 +134,27 @@ Leer_de_BD_local = function () {
                     <table class="container col-12" data-id="${id}">
                         <tr>
                             <td><i class="fal fa-id-card"> </i></td>
-                            <td><span id="spanCliente">${nuevojson[0]["CLIENTE"]}</span></td>
+                            <td><span class="spanCliente">${nuevojson[0]["CLIENTE"]}</span></td>
                             <td class="text-center" rowspan="2" style="border: #fff 1px solid;">
                                 Bs.<br>
-                                ${nuevojson[0]["importe"]}
+                                <span class="spanImporte">${nuevojson[0]["importe"]}</span>
                             </td>
                         </tr>
                         <tr>
                             <td><i class="fal fa-user"> </i></td>
-                            <td><span id="spanAbonado">${nuevojson[0]["ABONADO"]}</span></td>
+                            <td><span class="spanAbonado">${nuevojson[0]["ABONADO"]}</span></td>
                         </tr>
                         <tr>
                             <td><i class="fal fa-hand-holding-magic"> </i></td>
-                            <td><span id="spanServicio">${servicio}</span></td>
+                            <td><span class="spanServicio">${servicio}</span></td>
                         </tr>
                         <tr>
                             <td><i class="fal fa-user-circle"> </i></td>
-                            <td colspan="2"><span id="spanRazon">${nuevojson[0]["RAZON"]}</span></td>
+                            <td colspan="2"><span class="spanRazon">${nuevojson[0]["RAZON"]}</span></td>
                         </tr>
                         <tr>
                             <td><i class="fal fa-home"> </i></td>
-                            <td colspan="2"><span id="spanCalle">${nuevojson[0]["calle"]}</span></td>
+                            <td colspan="2"><span class="spanCalle">${nuevojson[0]["calle"]}</span></td>
                         </tr>
                     </table>
                 </div>
@@ -204,6 +210,28 @@ Leer_de_BD_local = function () {
         }
     });
 
+};
+
+//Función para calcular el total de todos los usuarios
+total_por_usuarios = function () {
+    var nro_abonados = $("span.spanAbonado");
+    var razones = $("span.spanRazon");
+    var importes = $("span.spanImporte");
+    var filas_a_insertar_subtotales = ""; //Se inicializa la variable
+    var total_por_usuarios = 0;
+
+    for(var i=0; i<nro_abonados.length; i++){
+        filas_a_insertar_subtotales +=  `
+                         <tr>
+                            <td class="text-right">${nro_abonados.eq(i).html()}</td>
+                            <td>${razones.eq(i).html()}</td>
+                            <td class="text-right">${importes.eq(i).html()}</td>
+                        </tr>
+        `
+        $("#modalTotal tbody").html(filas_a_insertar_subtotales);
+        total_por_usuarios += parseFloat(importes.eq(i).html());
+    }
+    $("#tdTotal").html(total_por_usuarios);
 };
 
 /*
