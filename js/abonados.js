@@ -231,7 +231,7 @@ total_por_usuarios = function () {
         $("#modalTotal tbody").html(filas_a_insertar_subtotales);
         total_por_usuarios += parseFloat(importes.eq(i).html());
     }
-    $("#tdTotal").html(total_por_usuarios);
+    $("#tdTotal").html(total_por_usuarios.toFixed(2));
 };
 
 /*
